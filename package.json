@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "grunt-contrib-jasmine": "^0.7.0"
+  }
+}
