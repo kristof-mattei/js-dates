@@ -75,7 +75,8 @@ for (var comparer in comparers) {
                                 expect(result).toBe(subject.expectEqual);
 
                             });
-                        })(datesToCompare[dateToCompare]);
+                        }
+                    )(datesToCompare[dateToCompare]);
                 }
 
             });
