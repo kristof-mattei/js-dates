@@ -1,5 +1,9 @@
 {
-  "dependencies": {
-    "grunt-contrib-jasmine": "^0.7.0"
-  }
+    "dependencies": {
+        "grunt-contrib-jasmine": "^0.7.0"
+    },
+    "private": true,
+    "scripts": { 
+        "test":  "grunt test --verbose"
+    }
 }
