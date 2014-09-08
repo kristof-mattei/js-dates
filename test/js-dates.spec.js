@@ -18,11 +18,48 @@ var toStringEquals = function(date1, date2) {
     return date1 + "" === date2 + "";
 };
 
+var getTimeAndUndefinedAndNullCheck = function(date1, date2) {
+    if(undefined === date1) {
+        if(undefined === date2) {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    if(undefined === date2) {
+        if(undefined === date1) {
+            return true;
+        }
+        
+        return false;
+    }
+
+    if(null === date1) {
+        if(null === date2) {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    if(null === date2) {
+        if(null === date1) {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    return date1.getTime() === date2.getTime();
+}
+
 var comparers = [
     { func: trippleEquals, title: "Comparing using ===" },
     { func: doubleEquals, title: "Comparing using ==" },
-    { func: getTimeEquals, title: "Comparing using date.getTime()" },
-    { func: toStringEquals, title: "Comparing using casting to string" }
+    { func: getTimeEquals, title: "Comparing using Date.getTime()" },
+    { func: toStringEquals, title: "Comparing using casting to string" },
+    { func: getTimeAndUndefinedAndNullCheck, title: "Comparing using null, undefined and Date.getTime() check." }
 ];
 
 var datesToCompare = [
